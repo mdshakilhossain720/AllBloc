@@ -4,6 +4,7 @@ import 'package:blocfullcourse/utils/image_picker_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'todo_bloc/todo_bloc.dart';
 import 'ui/counter.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(providers: [
       BlocProvider(create:(_)=> CounterBloc()),
       BlocProvider(create: (_)=> ImagePickerBloc(ImagePickerUitils())),
+      BlocProvider(create: (_)=>ToDOBloc()),
 
 
     ], child:MaterialApp(

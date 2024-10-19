@@ -1,6 +1,17 @@
-part of 'todo_bloc.dart';
+import 'package:equatable/equatable.dart';
 
-@immutable
-sealed class TodoState {}
+class ToDoState extends Equatable{
+  final List<String>todoList;
+  ToDoState({this.todoList=const[]});
 
-final class TodoInitial extends TodoState {}
+  ToDoState copyWith({List<String>? todolist}){
+    return ToDoState(
+      todoList: todolist ?? this.todoList
+    );
+  }
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [todoList];
+
+}

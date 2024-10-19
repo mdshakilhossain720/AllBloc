@@ -1,13 +1,18 @@
+
 import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:blocfullcourse/todo_bloc/todo_event.dart';
+import 'package:blocfullcourse/todo_bloc/todo_state.dart';
 
-part 'todo_event.dart';
-part 'todo_state.dart';
+class ToDOBloc extends Bloc<ToDOEvents,ToDoState>{
+  ToDOBloc():super(ToDoState()){
+    on<AddToEvents>(_addToEvents);
 
-class TodoBloc extends Bloc<TodoEvent, TodoState> {
-  TodoBloc() : super(TodoInitial()) {
-    on<TodoEvent>((event, emit) {
-      // TODO: implement event handler
-    });
   }
+
+  void _addToEvents(AddToEvents events,Emitter<ToDoState>emit){
+    emit(state.todoList.toString());
+  }
+
+
+
 }

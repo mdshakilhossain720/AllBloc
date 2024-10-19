@@ -1,4 +1,6 @@
 import 'package:blocfullcourse/bloc/counter_bloc.dart';
+import 'package:blocfullcourse/bloc/image_picker/imagepicker_bloc.dart';
+import 'package:blocfullcourse/utils/image_picker_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,10 +15,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(create: (_)=>CounterBloc(),
-    child: MaterialApp(
+    return MultiBlocProvider(providers: [
+      BlocProvider(create:(_)=> CounterBloc()),
+      BlocProvider(create: (_)=> ImagePickerBloc(ImagePickerUitils())),
+
+
+    ], child:MaterialApp(
       home: Counter(),
     ),);
+
   }
 }
 

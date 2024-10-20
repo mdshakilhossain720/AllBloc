@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'todo_bloc/todo_bloc.dart';
 import 'ui/counter.dart';
+import 'ui/favourite_apps.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +24,11 @@ class MyApp extends StatelessWidget {
 
 
     ], child:MaterialApp(
-      home: Counter(),
+      themeMode: ThemeMode.dark,
+      theme: ThemeData(
+        brightness: Brightness.dark
+      ),
+      home: FavouriteApps (),
     ),);
 
   }

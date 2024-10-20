@@ -10,7 +10,7 @@ class ToDOBloc extends Bloc<ToDOEvents,ToDoState>{
   }
 
   void _addToEvents(AddToEvents events,Emitter<ToDoState>emit){
-    emit(state.todoList.toString());
+    //emit(state.todoList.toString());
   }
 
 
